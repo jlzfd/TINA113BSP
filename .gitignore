@@ -1,0 +1,12 @@
+*.o
+*.a
+*.so
+*.swp
+*.swo
+*.tmp
+*.log
+package/edge-gateway/src/edge_gateway
+build/
+out/
+tmp/
+.vscode/
