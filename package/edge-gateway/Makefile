@@ -1,9 +1,11 @@
 include $(TOPDIR)/rules.mk
-include $(INCLUDE_DIR)/package.mk
 
 PKG_NAME:=edge-gateway
+PKG_VERSION:=1.0
 PKG_RELEASE:=1
-PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)
+PKG_BUILD_DIR:=$(COMPILE_DIR)/$(PKG_NAME)
+
+include $(BUILD_DIR)/package.mk
 
 define Package/$(PKG_NAME)
   SECTION:=utils
@@ -21,7 +23,7 @@ endef
 
 define Build/Prepare
 	mkdir -p $(PKG_BUILD_DIR)
-	$(CP) ./src/* $(PKG_BUILD_DIR)/
+	$(CP) -r ./src/* $(PKG_BUILD_DIR)/
 endef
 
 define Build/Compile
